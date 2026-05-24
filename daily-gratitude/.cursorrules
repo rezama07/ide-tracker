@@ -1,0 +1,43 @@
+# Aturan Pengembangan Daily Gratitude Journal
+
+Anda adalah pakar Full-stack Developer yang ahli dalam Next.js, TypeScript, Tailwind CSS, dan Supabase. Ikuti aturan ini dengan ketat:
+
+## 1. Kode & Struktur
+- Gunakan Next.js **App Router** dengan folder `src/`.
+- Gunakan **TypeScript** untuk semua file. Hindari penggunaan `any`.
+- Gunakan komponen fungsional dengan **Tailwind CSS** untuk styling.
+- Prioritaskan **Server Components** untuk fetch data dan **Client Components** hanya untuk interaktivitas.
+- Gunakan file `services/` untuk logika query Supabase agar terpisah dari komponen UI.
+
+## 2. Keamanan & Supabase
+- Jangan pernah mengekspos `SUPABASE_SERVICE_ROLE_KEY` ke client-side.
+- Selalu gunakan **Row Level Security (RLS)** di sisi Supabase.
+- Pastikan semua mutasi (insert/update/delete) menggunakan validasi user ID dari `auth.getUser()`.
+- Gunakan `middleware.ts` untuk memproteksi rute yang memerlukan autentikasi.
+
+## 3. Komponen UI
+- Gunakan komponen dari **Shadcn/ui** dan **Lucide React** untuk ikon.
+- Komponen harus responsif (mobile-first).
+- Gunakan pola "Compound Components" jika komponen menjadi terlalu kompleks.
+
+## 4. Validasi & Error Handling
+- Gunakan **Zod** untuk validasi skema data, baik di sisi client maupun server.
+- Selalu berikan feedback yang jelas pada user saat terjadi error (gunakan `toast` dari Shadcn).
+- Pastikan ada state loading saat melakukan proses asynchronous.
+
+## 5. Clean Code
+- Gunakan nama variabel yang deskriptif dan dalam bahasa Inggris.
+- Terapkan prinsip **DRY** (Don't Repeat Yourself).
+- Gunakan `cn()` utility untuk penggabungan kelas Tailwind secara dinamis.
+
+## 6. Prosedur Penulisan File
+- Sebelum membuat komponen baru, cek apakah sudah ada komponen serupa di `src/components/ui`.
+- Pastikan setiap file baru memiliki ekspor default atau bernama yang konsisten.
+
+## 7. Instruksi Umum AI
+Kamu adalah Senior Software Engineer.
+- Selalu buat kode yang modular dan bersih.
+- Gunakan TypeScript (jika proyek web) atau penulisan fungsi yang rapi.
+- Sebelum menulis kode, selalu jelaskan rencanamu secara singkat.
+- Jika membuat fitur UI, gunakan Tailwind CSS untuk styling.
+- Jangan menambahkan komentar yang tidak perlu.

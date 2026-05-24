@@ -1,0 +1,32 @@
+daily-gratitude/
+├── src/
+│   ├── app/                 # Next.js App Router (Pages & Layouts)
+│   │   ├── (auth)/          # Grouping untuk login/register
+│   │   │   ├── login/
+│   │   │   └── register/
+│   │   ├── dashboard/       # Halaman utama jurnal
+│   │   │   ├── [id]/        # Detail jurnal (edit/view)
+│   │   │   └── page.tsx
+│   │   ├── layout.tsx       # Root layout
+│   │   └── page.tsx         # Landing page
+│   ├── components/
+│   │   ├── ui/              # Komponen dasar (Button, Input dari Shadcn)
+│   │   ├── shared/          # Navbar, Footer, Sidebar
+│   │   └── journal/         # Komponen spesifik fitur (JournalCard, JournalForm)
+│   ├── hooks/               # Custom hooks (e.g., useJournal, useAuth)
+│   ├── lib/
+│   │   ├── supabase/        # Client & Server supabase config
+│   │   │   ├── client.ts
+│   │   │   ├── server.ts
+│   │   │   └── middleware.ts
+│   │   └── utils.ts         # Utility functions (cn, formatDate)
+│   ├── services/            # Logika API/Database (CRUD Jurnal)
+│   │   └── journal.ts
+│   ├── types/               # TypeScript interfaces/types
+│   │   ├── database.ts      # Generated dari Supabase CLI
+│   │   └── index.ts
+│   └── store/               # Global state (Zustand jika diperlukan)
+├── .env.local               # Variabel lingkungan (SUPABASE_URL, dll)
+├── .cursorrules             # File instruksi untuk AI Cursor
+├── next.config.mjs
+└── tailwind.config.ts
