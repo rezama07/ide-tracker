@@ -121,7 +121,7 @@ export default function DashboardPage() {
                   variant="ghost" 
                   size="icon"
                   onClick={() => handleDelete(entry.id)}
-                  className="absolute top-4 right-4 text-slate-300 hover:text-red-500 hover:bg-red-50 opacity-0 group-hover:opacity-100 transition-all rounded-full"
+                  className="absolute top-4 right-4 text-slate-300 hover:text-red-500 hover:bg-red-50 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all rounded-full"
                   title="Hapus Jurnal"
                 >
                   <Trash2 className="w-4 h-4" />
