@@ -47,14 +47,20 @@ export default function Home() {
           <Link href="/register" className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold rounded-full hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300 transform hover:-translate-y-1">
             Start Journaling Free
           </Link>
-          <Link href="/dashboard" className="px-8 py-4 bg-white text-slate-700 font-semibold rounded-full border border-slate-200 hover:border-purple-300 hover:bg-purple-50 transition-all duration-300">
+          <button 
+            onClick={() => {
+              setShowPreview(true);
+              setTimeout(() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' }), 50);
+            }} 
+            className="px-8 py-4 bg-white text-slate-700 font-semibold rounded-full border border-slate-200 hover:border-purple-300 hover:bg-purple-50 transition-all duration-300"
+          >
             View Demo
-          </Link>
+          </button>
         </div>
 
         {/* Feature Preview or Decorative elements */}
         {showPreview && (
-          <div className="mt-20 relative w-full">
+          <div id="demo" className="mt-20 relative w-full scroll-mt-24">
             <div className="bg-white/60 backdrop-blur-xl border border-white/60 rounded-3xl p-8 shadow-2xl relative mx-auto max-w-3xl transform rotate-1 scale-[0.98] opacity-70 blur-[2px] hover:blur-none hover:opacity-100 hover:rotate-0 hover:scale-100 transition-all duration-500 ease-out group cursor-default">
                
                {/* Delete Button */}
