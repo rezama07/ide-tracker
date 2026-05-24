@@ -6,6 +6,7 @@ import { journalService } from '@/services/journal';
 import { useRouter } from 'next/navigation';
 import { Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import ChatWidget from '@/components/ChatWidget';
 
 export default function DashboardPage() {
   const [entries, setEntries] = useState<any[]>([]);
@@ -146,6 +147,9 @@ export default function DashboardPage() {
           )}
         </div>
       </main>
+
+      {/* Floating AI Chatbot */}
+      <ChatWidget entries={entries} />
     </div>
   );
 }
